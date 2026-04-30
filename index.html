@@ -1,6 +1,5 @@
-Still missing a lot just fix ring splansh stuck & generate complete code attached existinv code below 
+<!DOCTYPE html>
 
-DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -165,57 +164,56 @@ DOCTYPE html>
     justify-content: center;
     padding: 80px 24px;
     background: linear-gradient(160deg, #02051a 0%, #060d2e 40%, #080418 70%, #02051a 100%);
-
   }
   .hero-content { text-align: center; max-width: 800px; z-index: 2; }
   .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; }
   .hero-names {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: clamp(1.8rem, 6.5vw, 3.2rem);
-  font-weight: 700;        /* changed from 100 to 700 */
-  letter-spacing: 0.18em;  /* slightly tighter for bold */
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-.hero-names .groom,
-.hero-names .bride {
-  display: block;
-  background: linear-gradient(180deg,
-    #ffffff 0%, #dce9ff 25%, #7b9fff 55%, #c8d8ff 80%, #ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 18px rgba(120,160,255,0.65))
-          drop-shadow(0 0 40px rgba(100,140,255,0.3));
-  text-align: center;
-}
-.hero-names em {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: 0.45em;
-  letter-spacing: 0.2em;
-  -webkit-text-fill-color: #a8c4ff;
-  color: #a8c4ff;
-  opacity: 0.85;
-  margin: 10px 0;
-  filter: none;
-}
-.hero-names em::before,
-.hero-names em::after {
-  content: '';
-  flex: 1;
-  max-width: 80px;
-  height: 0.5px;
-  background: linear-gradient(90deg, transparent, #7b9fff);
-}
-.hero-names em::after {
-  background: linear-gradient(90deg, #7b9fff, transparent);
-}
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(1.8rem, 6.5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .hero-names .groom,
+  .hero-names .bride {
+    display: block;
+    background: linear-gradient(180deg,
+      #ffffff 0%, #dce9ff 25%, #7b9fff 55%, #c8d8ff 80%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 18px rgba(120,160,255,0.65))
+            drop-shadow(0 0 40px rgba(100,140,255,0.3));
+    text-align: center;
+  }
+  .hero-names em {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.45em;
+    letter-spacing: 0.2em;
+    -webkit-text-fill-color: #a8c4ff;
+    color: #a8c4ff;
+    opacity: 0.85;
+    margin: 10px 0;
+    filter: none;
+  }
+  .hero-names em::before,
+  .hero-names em::after {
+    content: '';
+    flex: 1;
+    max-width: 80px;
+    height: 0.5px;
+    background: linear-gradient(90deg, transparent, #7b9fff);
+  }
+  .hero-names em::after {
+    background: linear-gradient(90deg, #7b9fff, transparent);
+  }
   .cute-line { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #fff0c0; margin-top: 20px; font-style: italic; text-shadow: 0 0 8px rgba(0,0,0,0.5); background: rgba(0,0,0,0.4); display: inline-block; padding: 8px 24px; border-radius: 60px; backdrop-filter: blur(6px); border: 1px solid rgba(245,200,66,0.4); }
 
   .countdown-wrap { display: flex; gap: clamp(12px, 4vw, 24px); justify-content: center; margin-top: 38px; flex-wrap: wrap; }
@@ -294,10 +292,12 @@ DOCTYPE html>
     .contact-numbers { gap: 18px; }
   }
 </style>
+
 </head>
 <body>
 
 <!-- RINGS SPLASH -->
+
 <div id="ringsSplash" class="rings-splash">
   <div class="rings-container">
     <div id="ringLeft" class="ring ring-left"><div class="ring-inner">💍</div></div>
@@ -309,6 +309,7 @@ DOCTYPE html>
 </div>
 
 <!-- MAIN WEDDING WEBSITE -->
+
 <div id="mainContent" class="main-wedding-content">
   <!-- YOUR GITHUB MUSIC - DIRECT RAW URL -->
   <audio id="bgMusic" loop preload="auto" crossorigin="anonymous">
@@ -323,7 +324,7 @@ DOCTYPE html>
         <em>♡ weds ♡</em>
         <span class="bride">Saurabh</span>
       </h1>
-      <div class="cute-line">💖 “Two States & Traditions, One Love 💖 — our forever begins.” 💖</div>
+      <div class="cute-line">💖 "Two States & Traditions, One Love 💖 — our forever begins." 💖</div>
       <p class="hero-date" id="heroDate"></p>
       <div class="ornament"><div class="ornament-diamond"></div></div>
       <div class="countdown-wrap" id="countdownArea">
@@ -347,14 +348,17 @@ DOCTYPE html>
     </div>
   </div>
 
- <<div class="video-wrap">
-  <video controls autoplay muted loop playsinline>
-    <source src="./Trail video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
- </div>
+  <!-- FIX #2: Removed stray extra "<" that was breaking the HTML -->
+
+  <div class="video-wrap">
+    <video controls autoplay muted loop playsinline>
+      <source src="./Trail video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
   <!-- EVENTS SECTION -->
+
   <div class="section reveal">
     <p class="section-title">Schedule</p>
     <h2 class="section-heading">Wedding Celebrations</h2>
@@ -363,6 +367,7 @@ DOCTYPE html>
   </div>
 
   <!-- VENUES -->
+
   <div class="section reveal">
     <p class="section-title">Venues</p>
     <h2 class="section-heading">Where To Find Us</h2>
@@ -371,6 +376,7 @@ DOCTYPE html>
   </div>
 
   <!-- INVITED BY & CONTACT -->
+
   <div class="section reveal">
     <div class="invited-by">
       <h3>✨ Invited by ✨</h3>
@@ -380,20 +386,23 @@ DOCTYPE html>
         <div class="family-member"><div class="role">Brother</div><div class="name">Melimi Dinesh</div></div>
       </div>
     </div>
-    
-    <div class="contact-info">
-      <h4>📞 CONTACT US</h4>
-      <div class="contact-numbers">
-        <span>📱9246400580 </span>
-        <span>📱9985260602 </span>
-      </div>
-    </div>
 
-    <div class="whatsapp-share">
-      <button id="whatsappShareBtn" class="whatsapp-btn">
-        💬 Share via WhatsApp
-      </button>
-    </div>
+```
+<div class="contact-info">
+  <h4>📞 CONTACT US</h4>
+  <div class="contact-numbers">
+    <span>📱 9246400580</span>
+    <span>📱 9985260602</span>
+  </div>
+</div>
+
+<div class="whatsapp-share">
+  <button id="whatsappShareBtn" class="whatsapp-btn">
+    💬 Share via WhatsApp
+  </button>
+</div>
+```
+
   </div>
 
   <footer>
@@ -413,9 +422,9 @@ DOCTYPE html>
       { name: "🥂 Reception", dateTime: "10-May-2026 (Monday) at 2:30 PM", emoji: "🥂🎉" }
     ],
     venues: [
-      { name: "Mahajan Grand Banquet", desc: "Wedding Ceremony", address: "near Laxvas Hotel, Sainath Nagar, Majiwada, Thane West, Thane, Maharashtra 400601", lat: 19.2121919, lng: 72.9806153 },
+      { name: "Mahajan Grand Banquet", desc: "Wedding Ceremony", address: "near Laxvas Hotel, Sainath Nagar, Majiwada, Thane West, Thane, Maharashtra 400601", lat: 19.2121919, lng: 72.9806153 }
     ]
-  };  
+  };
 
   // Set dates
   const wDate = new Date(2026, 4, 10, 12, 30, 0);
@@ -426,7 +435,8 @@ DOCTYPE html>
   // Render Events
   const eventsContainer = document.getElementById("eventsContainer");
   weddingData.events.forEach((ev, idx) => {
-    const div = document.createElement("div"); div.className = "event-item reveal";
+    const div = document.createElement("div");
+    div.className = "event-item reveal";
     div.innerHTML = `<span class="event-num">0${idx+1}</span><div class="event-details"><h3>${ev.name}</h3><p>${ev.dateTime}</p></div><div class="event-badge">${ev.emoji}</div>`;
     eventsContainer.appendChild(div);
   });
@@ -435,7 +445,8 @@ DOCTYPE html>
   const venuesContainer = document.getElementById("venuesContainer");
   weddingData.venues.forEach((venue) => {
     const mapsEmbedUrl = `https://www.google.com/maps?q=${venue.lat},${venue.lng}&output=embed`;
-    const card = document.createElement("div"); card.className = "venue-card reveal";
+    const card = document.createElement("div");
+    card.className = "venue-card reveal";
     card.innerHTML = `
       <h3>📍 ${venue.name}</h3>
       <p><strong>${venue.desc}</strong></p>
@@ -450,23 +461,28 @@ DOCTYPE html>
   function updateCountdown() {
     const target = new Date(2026, 4, 10, 12, 30, 0).getTime();
     const diff = target - Date.now();
-    if (diff < 0) { document.getElementById("countdownArea").innerHTML = '<div style="color:var(--gold-light);">✨ Celebration ongoing ✨</div>'; return; }
+    if (diff < 0) {
+      document.getElementById("countdownArea").innerHTML = '<div style="color:var(--gold-light);">✨ Celebration ongoing ✨</div>';
+      return;
+    }
     document.getElementById("days").innerText = String(Math.floor(diff / 864e5)).padStart(2,'0');
     document.getElementById("hours").innerText = String(Math.floor((diff % 864e5) / 36e5)).padStart(2,'0');
     document.getElementById("minutes").innerText = String(Math.floor((diff % 36e5) / 6e4)).padStart(2,'0');
     document.getElementById("seconds").innerText = String(Math.floor((diff % 6e4) / 1e3)).padStart(2,'0');
   }
-  setInterval(updateCountdown, 1000); updateCountdown();
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
 
   // ========== RINGS COLLISION ==========
   const splashDiv = document.getElementById("ringsSplash");
-  const ringLeft = document.getElementById("ringLeft"), ringRight = document.getElementById("ringRight");
+  const ringLeft = document.getElementById("ringLeft");
+  const ringRight = document.getElementById("ringRight");
   const sparkDiv = document.getElementById("sparkEffect");
   const inviteBtn = document.getElementById("inviteButton");
   const mainContent = document.getElementById("mainContent");
   const ringsMessage = document.getElementById("ringsMessage");
   let animFrame = null, start = null, collided = false;
-  
+
   function animateCollision(timestamp) {
     if (!start) start = timestamp;
     const elapsed = (timestamp - start) / 1000;
@@ -477,19 +493,28 @@ DOCTYPE html>
     const cWidth = container.clientWidth;
     const ringW = window.innerWidth < 768 ? 160 : 190;
     const centerPos = (cWidth / 2) - (ringW / 2);
-    
+
     if (!collided && progress >= 0.96) {
       collided = true;
-      sparkDiv.style.width = "150px"; sparkDiv.style.height = "150px";
-      sparkDiv.style.left = "50%"; sparkDiv.style.top = "50%";
+      sparkDiv.style.width = "150px";
+      sparkDiv.style.height = "150px";
+      sparkDiv.style.left = "50%";
+      sparkDiv.style.top = "50%";
       sparkDiv.style.transform = "translate(-50%, -50%)";
       sparkDiv.style.opacity = "1";
-      setTimeout(() => { sparkDiv.style.opacity = "0"; sparkDiv.style.width = "0"; sparkDiv.style.height = "0"; }, 500);
+      setTimeout(() => {
+        sparkDiv.style.opacity = "0";
+        sparkDiv.style.width = "0";
+        sparkDiv.style.height = "0";
+      }, 500);
       ringsMessage.innerHTML = "⚡ When two rings become one heart... ⚡";
       ringsMessage.style.color = "#ffea99";
-      setTimeout(() => { inviteBtn.classList.add("reveal-invite"); ringsMessage.innerHTML = "💫 You are cordially invited 💫"; }, 400);
+      setTimeout(() => {
+        inviteBtn.classList.add("reveal-invite");
+        ringsMessage.innerHTML = "💫 You are cordially invited 💫";
+      }, 400);
     }
-    
+
     if (progress < 0.94) {
       const offset = 10 + (centerPos - 10) * ease;
       ringLeft.style.left = `${offset}px`;
@@ -500,25 +525,35 @@ DOCTYPE html>
       ringLeft.style.left = `${centerPos - 8}px`;
       ringRight.style.right = `${centerPos - 8}px`;
     }
-    if (progress < 1) animFrame = requestAnimationFrame(animateCollision);
-    else cancelAnimationFrame(animFrame);
+
+    if (progress < 1) {
+      animFrame = requestAnimationFrame(animateCollision);
+    } else {
+      cancelAnimationFrame(animFrame);
+    }
   }
-  
-  function startRings() { start = null; collided = false; inviteBtn.classList.remove("reveal-invite"); ringLeft.style.left = "10px"; ringRight.style.right = "10px"; animFrame = requestAnimationFrame(animateCollision); }
+
+  function startRings() {
+    start = null;
+    collided = false;
+    inviteBtn.classList.remove("reveal-invite");
+    ringLeft.style.left = "10px";
+    ringRight.style.right = "10px";
+    animFrame = requestAnimationFrame(animateCollision);
+  }
   startRings();
 
   // ========== MUSIC & INVITE ==========
   const bgMusic = document.getElementById("bgMusic");
   let musicPlaying = false;
   const musicControl = document.getElementById("musicControlBtn");
-  
+
   function revealWebsite() {
     mainContent.classList.add("visible-main");
     splashDiv.style.transition = "opacity 0.9s";
     splashDiv.style.opacity = "0";
     setTimeout(() => { splashDiv.style.display = "none"; }, 900);
-    
-    // Play music from GitHub
+
     bgMusic.play().then(() => {
       musicPlaying = true;
       musicControl.innerHTML = "♫ Pause Music";
@@ -526,7 +561,7 @@ DOCTYPE html>
       console.log("Auto-play prevented:", e);
       musicControl.innerHTML = "♩ Play Music";
     });
-    
+
     setTimeout(() => {
       document.querySelectorAll(".main-wedding-content .reveal").forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add("visible");
@@ -534,24 +569,34 @@ DOCTYPE html>
       addPetals();
     }, 200);
   }
-  
+
   inviteBtn.addEventListener("click", (e) => { e.preventDefault(); revealWebsite(); });
-  
+
   musicControl.addEventListener("click", () => {
-    if (musicPlaying) { bgMusic.pause(); musicControl.innerHTML = "♩ Play Music"; }
-    else { bgMusic.play().catch(e=>console.log); musicControl.innerHTML = "♫ Pause Music"; }
+    if (musicPlaying) {
+      bgMusic.pause();
+      musicControl.innerHTML = "♩ Play Music";
+    } else {
+      bgMusic.play().catch(e => console.log(e));
+      musicControl.innerHTML = "♫ Pause Music";
+    }
     musicPlaying = !musicPlaying;
   });
-  
+
   // ========== WHATSAPP SHARE ==========
+  // FIX #1: shareMessage template literal was missing closing backtick — caused fatal JS crash
   const shareBtn = document.getElementById("whatsappShareBtn");
-  const shareMessage = `🎉 *Wedding Invitation* 🎉\n\nYou're invited to the wedding of *Asha* & *Saurabh* on *Sunday, 10th May 2026*.\n\n📍 Venues:\n• Wedding: Mahajan Grand\n• Maharastra, Thane\n\nJoin us to celebrate love! 💕\n\nRSVP: 9246400580;
+  const shareMessage = `🎉 *Wedding Invitation* 🎉\n\nYou're invited to the wedding of *Asha* & *Saurabh* on *Sunday, 10th May 2026*.\n\n📍 Venues:\n• Wedding: Mahajan Grand\n• Maharashtra, Thane\n\nJoin us to celebrate love! 💕\n\nRSVP: 9246400580`;
+
   shareBtn.addEventListener("click", () => {
     window.open(`https://wa.me/?text=${encodeURIComponent(shareMessage)}`, '_blank');
   });
-  
+
   // Observer for reveals
-  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("visible"); }); }, { threshold: 0.15 });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+  }, { threshold: 0.15 });
+
   const mainObserver = new MutationObserver(() => {
     if (mainContent.classList.contains("visible-main")) {
       document.querySelectorAll(".main-wedding-content .reveal").forEach(el => observer.observe(el));
@@ -559,26 +604,30 @@ DOCTYPE html>
     }
   });
   mainObserver.observe(mainContent, { attributes: true, attributeFilter: ["class"] });
-  
+
   function addPetals() {
     const hero = document.querySelector(".hero");
     if (!hero) return;
-    hero.style.position = "relative"; hero.style.overflow = "hidden";
-    for (let i=0;i<22;i++) {
+    hero.style.position = "relative";
+    hero.style.overflow = "hidden";
+    for (let i = 0; i < 22; i++) {
       let p = document.createElement("div");
       p.classList.add("petal");
-      p.style.width = `${5+Math.random()*10}px`; p.style.height = `${8+Math.random()*14}px`;
+      p.style.width = `${5 + Math.random() * 10}px`;
+      p.style.height = `${8 + Math.random() * 14}px`;
       p.style.background = `radial-gradient(ellipse, rgba(168,85,247,0.6), rgba(245,200,66,0.3))`;
       p.style.borderRadius = "50% 0 50% 0";
-      p.style.left = `${Math.random()*100}%`; p.style.top = `${Math.random()*100}%`;
-      p.style.animation = `floatPetal ${6+Math.random()*12}s linear infinite`;
-      p.style.animationDelay = `${Math.random()*9}s`;
+      p.style.left = `${Math.random() * 100}%`;
+      p.style.top = `${Math.random() * 100}%`;
+      p.style.animation = `floatPetal ${6 + Math.random() * 12}s linear infinite`;
+      p.style.animationDelay = `${Math.random() * 9}s`;
       hero.appendChild(p);
     }
   }
-  
+
   bgMusic.load();
   window.addEventListener("resize", () => { if (splashDiv.style.display !== "none") startRings(); });
 </script>
+
 </body>
 </html>
