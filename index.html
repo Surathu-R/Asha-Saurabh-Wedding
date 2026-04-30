@@ -5,42 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asha ♡ Saurabh — Wedding Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Cinzel&family=Lato&family=Josefin+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond&family=Lato&family=Josefin+Sans&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#0a0118;font-family:'Lato',sans-serif;overflow-x:hidden;}
+body{
+  background:#0a0118;
+  font-family:'Lato',sans-serif;
+  overflow-x:hidden;
+  -webkit-text-size-adjust:100%;
+}
 
+/* SPLASH */
 .rings-splash{
-position:fixed;width:100%;height:100%;z-index:10000;
-display:flex;flex-direction:column;align-items:center;justify-content:center;
-background:#000;transition:opacity 1s;
+  position:fixed;width:100%;height:100%;
+  display:flex;justify-content:center;align-items:center;
+  background:#000;z-index:10000;
+  animation:cinematicZoom 2.5s ease forwards;
 }
 
-.ring{width:150px;height:150px;border-radius:50%;position:absolute;
-border:4px solid gold;}
-
-.invite-btn{
-margin-top:30px;padding:12px 40px;border:none;
-background:gold;border-radius:40px;cursor:pointer;
-opacity:0;pointer-events:none;
+@keyframes cinematicZoom{
+  0%{transform:scale(1);opacity:1;}
+  80%{transform:scale(1.08);opacity:1;}
+  100%{transform:scale(1.15);opacity:0;}
 }
-.invite-btn.reveal-invite{opacity:1;pointer-events:auto;}
 
-.main-wedding-content{opacity:0;visibility:hidden;}
-.visible-main{opacity:1;visibility:visible;}
+/* MAIN */
+.main-wedding-content{
+  opacity:0;visibility:hidden;
+  transition:opacity 0.8s ease;
+}
+.visible-main{
+  opacity:1;visibility:visible;
+}
 
-.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;}
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;justify-content:center;align-items:center;
+  text-align:center;padding:60px 16px;
+}
+.hero h1{
+  font-family:'Cinzel';
+  color:#f5c842;
+  font-size:32px;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+  padding:20px;
+}
+.gallery img{
+  width:100%;
+  border-radius:12px;
+  filter:blur(8px);
+  transition:0.6s;
+}
+.gallery img.loaded{filter:blur(0);}
+
+/* VIDEO */
+video{
+  width:100%;
+  border-radius:12px;
+}
+
+/* BUTTON */
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:#f5c842;
+  cursor:pointer;
+  touch-action:manipulation;
+}
 </style>
 </head>
 
 <body>
 
 <!-- SPLASH -->
-<div id="ringsSplash" class="rings-splash">
-<div class="ring"></div>
-<button id="inviteButton" class="invite-btn">OPEN INVITE</button>
-</div>
+<div id="ringsSplash" class="rings-splash"></div>
 
 <!-- MAIN -->
 <div id="mainContent" class="main-wedding-content">
@@ -52,108 +99,103 @@ opacity:0;pointer-events:none;
 <section class="hero">
 <div>
 <h1>Asha ❤️ Saurabh</h1>
-<p id="heroDate"></p>
-<button id="musicControlBtn">Pause Music</button>
+<p id="date"></p>
+<button id="musicBtn">Pause Music</button>
 </div>
 </section>
 
-<div class="section">
-<img src="./1.jpg" width="100%">
-<img src="./2.jpg" width="100%">
-<img src="./3.jpg" width="100%">
+<!-- IMAGES -->
+<div class="gallery">
+<img src="./images/1.jpg" loading="lazy">
+<img src="./images/2.jpg" loading="lazy">
+<img src="./images/3.jpg" loading="lazy">
 </div>
 
-<!-- FIXED VIDEO -->
-<div class="video-wrap">
-<video controls muted loop playsinline>
-<source src="./Trail-video.mp4" type="video/mp4">
+<!-- VIDEO -->
+<div style="padding:20px">
+<video controls muted loop playsinline preload="metadata">
+<source src="./video/Trail-video.mp4" type="video/mp4">
 </video>
 </div>
 
-<div class="section">
-<div id="eventsContainer"></div>
-</div>
+<!-- EVENTS -->
+<div id="events"></div>
 
-<div class="section">
-<div id="venuesContainer"></div>
-</div>
+<!-- VENUES -->
+<div id="venues"></div>
 
-<button id="whatsappShareBtn">Share</button>
+<button id="shareBtn">Share on WhatsApp</button>
 
 </div>
 
 <script>
 
-/* DATA */
-const weddingData={
-events:[
-{name:"Haldi",dateTime:"8 May"},
-{name:"Wedding",dateTime:"10 May"},
-{name:"Reception",dateTime:"10 May"}
-],
-venues:[
-{name:"Mahajan Grand",lat:19.21,lng:72.98}
-]
-};
-
 /* DATE */
 const d=new Date(2026,4,10);
-document.getElementById("heroDate").innerHTML=d.toDateString();
+document.getElementById("date").innerHTML=d.toDateString();
 
-/* EVENTS */
-weddingData.events.forEach(ev=>{
-let div=document.createElement("div");
-div.innerHTML=`${ev.name} - ${ev.dateTime}`;
-eventsContainer.appendChild(div);
-});
+/* AUTO ENTER */
+setTimeout(()=>reveal(),2600);
 
-/* VENUES */
-weddingData.venues.forEach(v=>{
-let div=document.createElement("div");
-div.innerHTML=v.name;
-venuesContainer.appendChild(div);
-});
-
-/* RINGS + BUTTON */
-const inviteBtn=document.getElementById("inviteButton");
+/* REVEAL */
 const splash=document.getElementById("ringsSplash");
 const main=document.getElementById("mainContent");
+const music=document.getElementById("bgMusic");
 
-setTimeout(()=>inviteBtn.classList.add("reveal-invite"),1500);
-
-function revealWebsite(){
-main.classList.add("visible-main");
-splash.style.opacity="0";
-setTimeout(()=>splash.style.display="none",800);
-bgMusic.play().catch(()=>{});
+function reveal(){
+  main.classList.add("visible-main");
+  splash.style.display="none";
+  music.play().catch(()=>{});
 }
-
-inviteBtn.onclick=revealWebsite;
-
-/* MUSIC */
-let musicPlaying=true;
-const bgMusic=document.getElementById("bgMusic");
-document.getElementById("musicControlBtn").onclick=()=>{
-if(musicPlaying){bgMusic.pause();}
-else{bgMusic.play().catch(()=>{});}
-musicPlaying=!musicPlaying;
-};
-
-/* WHATSAPP FIXED */
-const shareMessage=`Wedding Invitation 💍
-Asha & Saurabh
-10 May 2026`;
-
-document.getElementById("whatsappShareBtn").onclick=()=>{
-window.open(`https://wa.me/?text=${encodeURIComponent(shareMessage)}`);
-};
 
 /* FAILSAFE */
 setTimeout(()=>{
-if(!main.classList.contains("visible-main")){
-revealWebsite();
-}
+ if(!main.classList.contains("visible-main")) reveal();
 },4000);
+
+/* MUSIC */
+let playing=true;
+document.getElementById("musicBtn").onclick=()=>{
+ if(playing){music.pause();}
+ else{music.play().catch(()=>{});}
+ playing=!playing;
+};
+
+/* IMAGE LOAD EFFECT */
+document.querySelectorAll("img").forEach(img=>{
+ img.onload=()=>img.classList.add("loaded");
+});
+
+/* DATA */
+const events=[
+"Haldi - 8 May",
+"Wedding - 10 May",
+"Reception - 10 May"
+];
+const venues=[
+"Mahajan Grand, Thane"
+];
+
+events.forEach(e=>{
+ let div=document.createElement("div");
+ div.innerHTML=e;
+ document.getElementById("events").appendChild(div);
+});
+
+venues.forEach(v=>{
+ let div=document.createElement("div");
+ div.innerHTML=v;
+ document.getElementById("venues").appendChild(div);
+});
+
+/* WHATSAPP */
+const msg=`Wedding Invitation 💍
+Asha & Saurabh
+10 May 2026`;
+
+document.getElementById("shareBtn").onclick=()=>{
+ window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`);
+};
 
 </script>
 
